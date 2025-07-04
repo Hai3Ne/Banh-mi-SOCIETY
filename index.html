@@ -36,6 +36,8 @@
             background: white;
             min-height: 100vh;
             box-shadow: 0 0 50px rgba(0,0,0,0.1);
+            padding-bottom: 180px; /* Increased padding to accommodate the fixed button section */
+            position: relative; /* Needed for absolute positioning of the fixed section */
         }
 
         /* Header Section */
@@ -203,7 +205,15 @@
 
         .color-item {
             text-align: center;
-            min-width: 45%;
+            min-width: 120px;
+            flex-basis: calc(50% - 10px); /* Forces 2 items per row with gap */
+            max-width: calc(50% - 10px); /* Ensures it doesn't grow too wide */
+        }
+        @media (max-width: 600px) {
+            .color-item {
+                flex-basis: 100%; /* Stack on small screens */
+                max-width: 100%;
+            }
         }
 
         .color-circle {
@@ -237,6 +247,7 @@
             color: var(--medium-gray);
             margin-top: 5px;
             min-height: 30px; /* Ensure enough space for 2 lines */
+            line-height: 1.2em; /* Explicit line height */
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
@@ -442,7 +453,7 @@
             line-height: 1.6;
         }
 
-        /* CSS for the new Deliverables tab */
+        /* CSS for the Deliverables tab */
         .deliverables-list {
             list-style: none;
             padding: 0;
@@ -473,9 +484,79 @@
             margin-right: 10px;
         }
 
-        .sample-website-button {
-            display: inline-block;
-            background: var(--primary-teal);
+        /* CSS for the Team tab */
+        .team-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .team-description {
+            font-size: 18px;
+            color: var(--dark-gray);
+            margin-bottom: 30px;
+        }
+
+        .product-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .product-list li {
+            background: var(--light-gray);
+            border-radius: 10px;
+            padding: 15px 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .product-list li:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-list li a {
+            color: var(--primary-teal);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .product-list li a:hover {
+            color: var(--primary-orange);
+            text-decoration: underline;
+        }
+
+        /* Fixed Sample Website Section */
+        .fixed-sample-website {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--primary-teal); /* Darker background for contrast */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+            z-index: 1000; /* Ensure it's on top */
+        }
+
+        .fixed-sample-website h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--accent-yellow); /* Yellow for highlight */
+        }
+
+        .fixed-sample-website p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .fixed-sample-website .sample-website-button {
+            background: var(--primary-orange);
             color: white;
             border: none;
             padding: 15px 30px;
@@ -484,15 +565,22 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            text-decoration: none; /* Remove underline from link */
-            margin-top: 20px;
+            text-decoration: none;
+            display: inline-block;
         }
 
-        .sample-website-button:hover {
-            background: var(--primary-orange);
+        .fixed-sample-website .sample-website-button:hover {
+            background: var(--secondary-orange);
             transform: translateY(-3px);
             box-shadow: 0 8px 15px rgba(0,0,0,0.2);
         }
+
+        .fixed-sample-website .note {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 10px;
+        }
+
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -504,6 +592,19 @@
             .color-palette { flex-direction: column; align-items: center; }
             .builder-demo { grid-template-columns: 1fr; }
             .menu-card-demo { grid-template-columns: 1fr; }
+            .fixed-sample-website {
+                padding: 15px;
+            }
+            .fixed-sample-website h3 {
+                font-size: 20px;
+            }
+            .fixed-sample-website p {
+                font-size: 14px;
+            }
+            .fixed-sample-website .sample-website-button {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -516,19 +617,19 @@
         </header>
 
         <nav class="tab-navigation">
-            <button class="tab-button active" data-tab="ideas">💡 Ideas</button> <!-- Changed to Ideas -->
-            <button class="tab-button" data-tab="solutions">🛠️ Solutions</button> <!-- New Solutions tab -->
-            <button class="tab-button" data-tab="identity">🎯 Visual Identity</button>
-            <button class="tab-button" data-tab="features">✨ Interactive Features</button>
+            <button class="tab-button active" data-tab="concepts-solutions">💡 Concepts & Solutions</button>
+            <button class="tab-button" data-tab="brand-experience">🎨 Brand Experience</button>
             <button class="tab-button" data-tab="benefits">🚀 Real-World Benefits</button>
             <button class="tab-button" data-tab="deliverables">✅ Deliverables</button>
+            <button class="tab-button" data-tab="team">👥 Our Team</button>
         </nav>
 
-        <!-- Ideas Tab (New) -->
-        <div class="tab-content active" id="ideas">
-            <h2 class="section-title">Creative Ideas: Where Vision Takes Flight</h2>
-            <p class="section-subtitle">Blending authentic Vietnamese heritage with cutting-edge digital concepts for a truly unique online presence.</p>
+        <!-- Concepts & Solutions Tab (Combined Ideas and Solutions) -->
+        <div class="tab-content active" id="concepts-solutions">
+            <h2 class="section-title">Creative Concepts & Strategic Solutions</h2>
+            <p class="section-subtitle">Blending authentic Vietnamese heritage with cutting-edge digital concepts, and our layered approach to crafting immersive digital experiences.</p>
 
+            <h3 style="color: var(--primary-teal); font-size: 28px; margin-bottom: 30px; text-align: center;">Design Inspiration: Where Vision Takes Flight</h3>
             <div class="content-grid">
                 <div class="content-card">
                     <div class="card-icon">🏮</div>
@@ -548,13 +649,8 @@
                     <p class="card-description">Experience smooth micro-interactions and leverage progressive web app technology to create truly engaging experiences that captivate your audience from the first click.</p>
                 </div>
             </div>
-        </div>
 
-        <!-- Solutions Tab (New) -->
-        <div class="tab-content" id="solutions">
-            <h2 class="section-title">Strategic Solutions: Bringing Your Vision to Life</h2>
-            <p class="section-subtitle">Our core philosophy and layered approach to crafting a high-performing, immersive digital experience for your brand.</p>
-
+            <h3 style="color: var(--primary-teal); font-size: 28px; margin-bottom: 30px; text-align: center; margin-top: 60px;">Strategic Solutions: Bringing Your Vision to Life</h3>
             <div class="feature-showcase">
                 <h3 style="color: var(--primary-teal); font-size: 24px; margin-bottom: 20px;">Our Core Philosophy: "Website as an Immersive Experience"</h3>
                 <div class="feature-demo">
@@ -566,10 +662,10 @@
             </div>
         </div>
 
-        <!-- Visual Identity Tab -->
-        <div class="tab-content" id="identity">
-            <h2 class="section-title">Visual Identity: For Instant Brand Recognition</h2>
-            <p class="section-subtitle">A meticulously crafted strategy for colors, typography, and layout that ensures your brand stands out and leaves a lasting impression.</p>
+        <!-- Brand Experience Tab (Combined Visual Identity and Interactive Features) -->
+        <div class="tab-content" id="brand-experience">
+            <h2 class="section-title">Brand Experience: Visuals & Interactions</h2>
+            <p class="section-subtitle">A meticulously crafted strategy for colors, typography, layout, and dynamic elements that ensures your brand stands out and leaves a lasting impression.</p>
 
             <h3 style="text-align: center; color: var(--primary-teal); font-size: 28px; margin-bottom: 30px;">Strategic Color Psychology</h3>
             <div class="color-palette">
@@ -618,13 +714,8 @@
                     <p class="card-description">Your website will be meticulously designed to perform flawlessly on every device. With touch-friendly interface elements, perfectly readable text sizes, and intuitive navigation, the experience feels natural whether on a phone, tablet, or desktop computer.</p>
                 </div>
             </div>
-        </div>
 
-        <!-- Interactive Features Tab -->
-        <div class="tab-content" id="features">
-            <h2 class="section-title">Interactive Features: Engaging & Functional</h2>
-            <p class="section-subtitle">Dynamic elements that make your website memorable, highly functional, and a joy to explore.</p>
-
+            <h3 style="color: var(--primary-teal); font-size: 28px; margin-bottom: 30px; text-align: center; margin-top: 60px;">Interactive Features: Engaging & Functional</h3>
             <div class="feature-showcase">
                 <h3 style="color: var(--primary-teal); margin-bottom: 20px;">Captivating Hero Section Experience</h3>
                 <div class="hero-demo">
@@ -802,19 +893,40 @@
                     <strong>Fundamental Security Measures:</strong> Standard security protocols implemented to protect your website against common vulnerabilities, safeguarding your data and user trust.
                 </li>
             </ul>
+        </div>
 
-            <h3 style="text-align: center; color: var(--primary-teal); font-size: 28px; margin-bottom: 30px;">Explore Our Sample Prototype Website</h3>
-            <p style="text-align: center; color: var(--medium-gray); margin-bottom: 20px;">
-                Click the button below to experience a live example of a prototype website, offering you a tangible preview of the user interface and overall user experience we deliver.
-            </p>
-            <div style="text-align: center;">
-                <a href="index_demo.html" target="_blank" class="sample-website-button">
-                    View Sample Prototype
-                </a>
+        <!-- Our Team Tab -->
+        <div class="tab-content" id="team">
+            <h2 class="section-title">Our Expert Team: Driving Innovation</h2>
+            <p class="section-subtitle">A dedicated team with over 6 years of proven experience in programming, web development, and software solutions.</p>
+
+            <div class="team-section">
+                <p class="team-description">
+                    Our seasoned professionals bring extensive expertise to every project, ensuring high-quality, scalable, and innovative solutions tailored to your unique business needs. We are passionate about transforming ideas into robust digital realities.
+                </p>
+
+                <h3 style="color: var(--primary-teal); font-size: 24px; margin-bottom: 20px;">Featured Projects & Success Stories</h3>
+                <p style="color: var(--medium-gray); margin-bottom: 20px;">
+                    Explore some of the impactful websites and software solutions our team has proudly contributed to:
+                </p>
+                <ul class="product-list">
+                    <li><a href="https://careerviet.vn/" target="_blank">CareerViet.vn</a></li>
+                    <li><a href="https://becamex.com.vn/" target="_blank">Becamex.com.vn</a></li>
+                    <li><a href="http://happyskin.vn/" target="_blank">Happyskin.vn</a></li>
+                    <li><a href="https://kimtingroup.com/" target="_blank">kimtingroup.com</a></li>
+                    <li><a href="http://happyskin.vn/" target="_blank">Happyskin.vn</a></li>
+                </ul>
             </div>
-            <p style="text-align: center; font-size: 12px; color: var(--medium-gray); margin-top: 10px;">
-                <em>(Note: The link above is a placeholder. Please replace it with your actual Figma or prototype link.)</em>
-            </p>
+        </div>
+
+        <!-- Fixed Sample Website Section (Always Visible) -->
+        <div class="fixed-sample-website">
+            <h3>Explore Our Sample Prototype Website</h3>
+            <p>Click the button below to experience a live example of a prototype website, offering you a tangible preview of the user interface and overall user experience we deliver.</p>
+            <a href="https://www.figma.com/proto/YOUR_FIGMA_PROTOTYPE_LINK_HERE" target="_blank" class="sample-website-button">
+                View Sample Prototype
+            </a>
+            <p class="note"><em>(Note: The link above is a placeholder. Please replace it with your actual Figma or prototype link.)</em></p>
         </div>
 
     </div>
