@@ -236,6 +236,12 @@
             font-size: 12px;
             color: var(--medium-gray);
             margin-top: 5px;
+            min-height: 30px; /* Ensure enough space for 2 lines */
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         /* Feature Showcase */
@@ -510,37 +516,44 @@
         </header>
 
         <nav class="tab-navigation">
-            <button class="tab-button active" data-tab="inspiration">🎨 Design Inspiration</button>
+            <button class="tab-button active" data-tab="ideas">💡 Ideas</button> <!-- Changed to Ideas -->
+            <button class="tab-button" data-tab="solutions">🛠️ Solutions</button> <!-- New Solutions tab -->
             <button class="tab-button" data-tab="identity">🎯 Visual Identity</button>
             <button class="tab-button" data-tab="features">✨ Interactive Features</button>
             <button class="tab-button" data-tab="benefits">🚀 Real-World Benefits</button>
             <button class="tab-button" data-tab="deliverables">✅ Deliverables</button>
         </nav>
 
-        <!-- Design Inspiration Tab -->
-        <div class="tab-content active" id="inspiration">
-            <h2 class="section-title">Design Inspiration: Where Culture Meets Innovation</h2>
-            <p class="section-subtitle">Blending authentic Vietnamese heritage with contemporary digital trends for a truly unique online presence.</p>
+        <!-- Ideas Tab (New) -->
+        <div class="tab-content active" id="ideas">
+            <h2 class="section-title">Creative Ideas: Where Vision Takes Flight</h2>
+            <p class="section-subtitle">Blending authentic Vietnamese heritage with cutting-edge digital concepts for a truly unique online presence.</p>
 
             <div class="content-grid">
                 <div class="content-card">
                     <div class="card-icon">🏮</div>
                     <h3 class="card-title">Vietnamese Heritage & Charm</h3>
-                    <p class="card-description">Our designs draw inspiration from traditional Vietnamese lanterns, rich silk textures, and intricate ceramic patterns. This creates an authentic cultural connection that resonates with all demographics, offering a modern appeal rooted in timeless beauty.</p>
+                    <p class="card-description">Our designs draw inspiration from traditional lanterns, silk textures, and ceramic patterns, creating an authentic cultural connection that resonates with all demographics.</p>
                 </div>
 
                 <div class="content-card">
                     <div class="card-icon">🌆</div>
                     <h3 class="card-title">Cutting-Edge Digital Aesthetics</h3>
-                    <p class="card-description">Embrace clean, minimalist aesthetics inspired by today's fast-paced digital lifestyle. Our intuitive interfaces feel instantly familiar to smartphone users, social media natives, and discerning professionals alike, ensuring seamless navigation and a delightful user experience.</p>
+                    <p class="card-description">Embrace clean, minimalist aesthetics inspired by today's digital lifestyle. Intuitive interfaces feel instantly familiar, ensuring seamless navigation and a delightful user experience.</p>
                 </div>
 
                 <div class="content-card">
-                    <div class="card-icon">📱</div>
+                    <div class="card-icon">✨</div>
                     <h3 class="card-title">Innovative & Engaging Interactions</h3>
-                    <p class="card-description">Experience smooth micro-interactions and leverage progressive web app technology to create truly engaging experiences. Your website will feel like a premium mobile application, running flawlessly across any web browser and captivating your audience from the first click.</p>
+                    <p class="card-description">Experience smooth micro-interactions and leverage progressive web app technology to create truly engaging experiences that captivate your audience from the first click.</p>
                 </div>
             </div>
+        </div>
+
+        <!-- Solutions Tab (New) -->
+        <div class="tab-content" id="solutions">
+            <h2 class="section-title">Strategic Solutions: Bringing Your Vision to Life</h2>
+            <p class="section-subtitle">Our core philosophy and layered approach to crafting a high-performing, immersive digital experience for your brand.</p>
 
             <div class="feature-showcase">
                 <h3 style="color: var(--primary-teal); font-size: 24px; margin-bottom: 20px;">Our Core Philosophy: "Website as an Immersive Experience"</h3>
@@ -564,7 +577,7 @@
                     <div class="color-circle" style="background: #063835;">#063835</div>
                     <div class="color-name">Heritage Teal</div>
                     <div class="color-hex">#063835</div>
-                    <div class="color-usage">Conveys trust, authenticity, and provides clear navigation.</div>
+                    <div class="color-usage">Conveys trust, authenticity, and clear navigation.</div>
                 </div>
                 <div class="color-item">
                     <div class="color-circle" style="background: #FF6600;">#FF6600</div>
@@ -576,13 +589,13 @@
                     <div class="color-circle" style="background: #FF9D1F;">#FF9D1F</div>
                     <div class="color-name">Premium Gold</div>
                     <div class="color-hex">#FF9D1F</div>
-                    <div class="color-usage">Accentuates quality, draws attention to special offers and premium content.</div>
+                    <div class="color-usage">Accentuates quality, special offers, and premium content.</div>
                 </div>
                 <div class="color-item">
                     <div class="color-circle" style="background: #f8f9fa; color: #333;">#F8F9FA</div>
                     <div class="color-name">Clean Space</div>
                     <div class="color-hex">#F8F9FA</div>
-                    <div class="color-usage">Provides essential background and visual breathing room, enhancing readability.</div>
+                    <div class="color-usage">Provides essential background and visual breathing room.</div>
                 </div>
             </div>
 
