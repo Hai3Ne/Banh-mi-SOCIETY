@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bánh Mì Society - Design Presentation</title>
+    <title>Banh Mi Society - Design Presentation</title>
     <style>
+        /* General CSS */
         * {
             margin: 0;
             padding: 0;
@@ -37,6 +38,7 @@
             box-shadow: 0 0 50px rgba(0,0,0,0.1);
         }
 
+        /* Header Section */
         .header {
             background: linear-gradient(135deg, var(--primary-teal), var(--primary-orange));
             color: white;
@@ -47,7 +49,7 @@
         }
 
         .header::before {
-            content: '🥖';
+            content: '🥖'; /* Banh Mi Icon */
             position: absolute;
             font-size: 200px;
             opacity: 0.1;
@@ -80,6 +82,7 @@
             opacity: 0.8;
         }
 
+        /* Tab Navigation */
         .tab-navigation {
             background: var(--light-gray);
             border-bottom: 3px solid var(--primary-orange);
@@ -114,6 +117,7 @@
             border-bottom-color: var(--primary-orange);
         }
 
+        /* Tab Content */
         .tab-content {
             display: none;
             padding: 60px 40px;
@@ -129,6 +133,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Section Titles */
         .section-title {
             font-size: 36px;
             font-weight: 700;
@@ -145,6 +150,7 @@
             font-style: italic;
         }
 
+        /* Content Grid */
         .content-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -152,6 +158,7 @@
             margin: 40px 0;
         }
 
+        /* Content Card */
         .content-card {
             background: white;
             border-radius: 15px;
@@ -185,6 +192,7 @@
             text-align: center;
         }
 
+        /* Color Palette */
         .color-palette {
             display: flex;
             justify-content: center;
@@ -230,6 +238,7 @@
             margin-top: 5px;
         }
 
+        /* Feature Showcase */
         .feature-showcase {
             background: var(--light-gray);
             border-radius: 20px;
@@ -246,6 +255,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
+        /* Demo Button */
         .demo-button {
             background: var(--primary-orange);
             color: white;
@@ -269,6 +279,7 @@
             color: white;
         }
 
+        /* Builder Demo */
         .builder-demo {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -296,6 +307,7 @@
             gap: 8px;
         }
 
+        /* Hero Section Demo */
         .hero-demo {
             background: linear-gradient(135deg, rgba(6, 56, 53, 0.1) 0%, rgba(255, 102, 0, 0.1) 100%);
             padding: 60px 40px;
@@ -335,6 +347,7 @@
             60% { transform: translateY(-10px); }
         }
 
+        /* Menu Card Demo */
         .menu-card-demo {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -385,6 +398,7 @@
             text-align: right;
         }
 
+        /* Benefits Grid */
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -422,6 +436,59 @@
             line-height: 1.6;
         }
 
+        /* CSS for the new Deliverables tab */
+        .deliverables-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 40px;
+        }
+
+        .deliverables-list li {
+            background: var(--white);
+            border: 1px solid var(--light-gray);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+        }
+
+        .deliverables-list li::before {
+            content: '✅'; /* Checkmark Icon */
+            font-size: 24px;
+            margin-right: 15px;
+            color: var(--primary-teal);
+        }
+
+        .deliverables-list li strong {
+            color: var(--primary-orange);
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .sample-website-button {
+            display: inline-block;
+            background: var(--primary-teal);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none; /* Remove underline from link */
+            margin-top: 20px;
+        }
+
+        .sample-website-button:hover {
+            background: var(--primary-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             .header h1 { font-size: 32px; }
             .section-title { font-size: 28px; }
@@ -437,9 +504,9 @@
 <body>
     <div class="presentation-container">
         <header class="header">
-            <h1>🥖 BÁNH MÌ SOCIETY</h1>
-            <p>Modern Website Design Showcase</p>
-            <div class="tagline">"Healthy Bites of Freshness" - Contemporary design ideas for modern F&B brands</div>
+            <h1>🥖 BANH MI SOCIETY</h1>
+            <p>Your Vision, Our Design: A Modern Website Showcase</p>
+            <div class="tagline">"Healthy Bites of Freshness" - Elevating F&B brands with cutting-edge digital experiences</div>
         </header>
 
         <nav class="tab-navigation">
@@ -447,250 +514,296 @@
             <button class="tab-button" data-tab="identity">🎯 Visual Identity</button>
             <button class="tab-button" data-tab="features">✨ Interactive Features</button>
             <button class="tab-button" data-tab="benefits">🚀 Real-World Benefits</button>
+            <button class="tab-button" data-tab="deliverables">✅ Deliverables</button>
         </nav>
 
         <!-- Design Inspiration Tab -->
         <div class="tab-content active" id="inspiration">
-            <h2 class="section-title">Design Inspiration</h2>
-            <p class="section-subtitle">Creative inspiration from Vietnamese culture meets contemporary digital trends</p>
+            <h2 class="section-title">Design Inspiration: Where Culture Meets Innovation</h2>
+            <p class="section-subtitle">Blending authentic Vietnamese heritage with contemporary digital trends for a truly unique online presence.</p>
 
             <div class="content-grid">
                 <div class="content-card">
                     <div class="card-icon">🏮</div>
-                    <h3 class="card-title">Vietnamese Heritage</h3>
-                    <p class="card-description">Colors inspired by traditional lanterns, silk textures, and ceramic patterns. Creating authentic cultural connections while maintaining modern appeal across all demographics.</p>
+                    <h3 class="card-title">Vietnamese Heritage & Charm</h3>
+                    <p class="card-description">Our designs draw inspiration from traditional Vietnamese lanterns, rich silk textures, and intricate ceramic patterns. This creates an authentic cultural connection that resonates with all demographics, offering a modern appeal rooted in timeless beauty.</p>
                 </div>
 
                 <div class="content-card">
                     <div class="card-icon">🌆</div>
-                    <h3 class="card-title">Contemporary Digital Culture</h3>
-                    <p class="card-description">Clean, minimalist aesthetics inspired by today's digital lifestyle. Intuitive interfaces that feel familiar to smartphone users, social media natives, and professional adults alike.</p>
+                    <h3 class="card-title">Cutting-Edge Digital Aesthetics</h3>
+                    <p class="card-description">Embrace clean, minimalist aesthetics inspired by today's fast-paced digital lifestyle. Our intuitive interfaces feel instantly familiar to smartphone users, social media natives, and discerning professionals alike, ensuring seamless navigation and a delightful user experience.</p>
                 </div>
 
                 <div class="content-card">
                     <div class="card-icon">📱</div>
-                    <h3 class="card-title">Interactive Innovation</h3>
-                    <p class="card-description">Smooth micro-interactions and progressive web app technology. Creating engaging experiences that feel like premium mobile apps while running seamlessly in any web browser.</p>
+                    <h3 class="card-title">Innovative & Engaging Interactions</h3>
+                    <p class="card-description">Experience smooth micro-interactions and leverage progressive web app technology to create truly engaging experiences. Your website will feel like a premium mobile application, running flawlessly across any web browser and captivating your audience from the first click.</p>
                 </div>
             </div>
 
             <div class="feature-showcase">
-                <h3 style="color: var(--primary-teal); font-size: 24px; margin-bottom: 20px;">Core Concept: "Website as Experience"</h3>
+                <h3 style="color: var(--primary-teal); font-size: 24px; margin-bottom: 20px;">Our Core Philosophy: "Website as an Immersive Experience"</h3>
                 <div class="feature-demo">
-                    <h4 style="color: var(--primary-orange); margin-bottom: 15px;">🥖 Building a Digital Bánh Mì</h4>
-                    <p><strong>Foundation (Structure):</strong> Solid, accessible architecture that works for everyone</p>
-                    <p><strong>Fresh Content (Visual Layer):</strong> High-quality imagery and authentic storytelling</p>
-                    <p><strong>Interactive Elements (Engagement):</strong> Custom features that create memorable moments</p>
+                    <h4 style="color: var(--primary-orange); margin-bottom: 15px;">🥖 Crafting Your Digital Banh Mi: A Layered Approach</h4>
+                    <p><strong>Robust Foundation (Structure):</strong> We build on a solid, accessible architecture, ensuring your website performs flawlessly for every user, on every device.</p>
+                    <p><strong>Vibrant Content (Visual Layer):</strong> High-quality imagery, compelling visuals, and authentic storytelling breathe life into your brand, making every page a feast for the eyes.</p>
+                    <p><strong>Dynamic Elements (Engagement):</strong> Custom-designed interactive features create memorable moments, transforming passive browsing into an active, delightful journey for your customers.</p>
                 </div>
             </div>
         </div>
 
         <!-- Visual Identity Tab -->
         <div class="tab-content" id="identity">
-            <h2 class="section-title">Visual Identity</h2>
-            <p class="section-subtitle">Colors, typography, and layout strategy that creates instant brand recognition</p>
+            <h2 class="section-title">Visual Identity: For Instant Brand Recognition</h2>
+            <p class="section-subtitle">A meticulously crafted strategy for colors, typography, and layout that ensures your brand stands out and leaves a lasting impression.</p>
 
-            <h3 style="text-align: center; color: var(--primary-teal); font-size: 28px; margin-bottom: 30px;">Color Psychology</h3>
+            <h3 style="text-align: center; color: var(--primary-teal); font-size: 28px; margin-bottom: 30px;">Strategic Color Psychology</h3>
             <div class="color-palette">
                 <div class="color-item">
                     <div class="color-circle" style="background: #063835;">#063835</div>
                     <div class="color-name">Heritage Teal</div>
                     <div class="color-hex">#063835</div>
-                    <div class="color-usage">Trust, authenticity, navigation</div>
+                    <div class="color-usage">Conveys trust, authenticity, and provides clear navigation.</div>
                 </div>
                 <div class="color-item">
                     <div class="color-circle" style="background: #FF6600;">#FF6600</div>
-                    <div class="color-name">Energy Orange</div>
+                    <div class="color-name">Dynamic Orange</div>
                     <div class="color-hex">#FF6600</div>
-                    <div class="color-usage">Action buttons, appetite appeal</div>
+                    <div class="color-usage">Ignites action, stimulates appetite, and highlights key elements.</div>
                 </div>
                 <div class="color-item">
                     <div class="color-circle" style="background: #FF9D1F;">#FF9D1F</div>
                     <div class="color-name">Premium Gold</div>
                     <div class="color-hex">#FF9D1F</div>
-                    <div class="color-usage">Quality highlights, special offers</div>
+                    <div class="color-usage">Accentuates quality, draws attention to special offers and premium content.</div>
                 </div>
                 <div class="color-item">
                     <div class="color-circle" style="background: #f8f9fa; color: #333;">#F8F9FA</div>
                     <div class="color-name">Clean Space</div>
                     <div class="color-hex">#F8F9FA</div>
-                    <div class="color-usage">Background, breathing room</div>
+                    <div class="color-usage">Provides essential background and visual breathing room, enhancing readability.</div>
                 </div>
             </div>
 
             <div class="content-grid">
                 <div class="content-card">
                     <div class="card-icon">🔤</div>
-                    <h3 class="card-title">Typography Strategy</h3>
-                    <p class="card-description"><strong>Segoe UI Family:</strong> Universal readability across all devices and platforms. Professional appearance that scales beautifully from mobile to desktop, ensuring consistent brand experience.</p>
+                    <h3 class="card-title">Sophisticated Typography Strategy</h3>
+                    <p class="card-description"><strong>Segoe UI Family:</strong> Chosen for its universal readability across all devices and platforms. This professional typeface scales beautifully from mobile to desktop, ensuring a consistent and polished brand experience, always.</p>
                 </div>
 
                 <div class="content-card">
                     <div class="card-icon">📐</div>
-                    <h3 class="card-title">Layout Philosophy</h3>
-                    <p class="card-description"><strong>"Organized Elegance":</strong> Clean grid system that guides the eye naturally. Information hierarchy that makes sense to first-time visitors while providing quick access for returning customers.</p>
+                    <h3 class="card-title">Intuitive Layout Philosophy</h3>
+                    <p class="card-description"><strong>"Organized Elegance":</strong> Our clean grid system naturally guides the user's eye through your content. A clear information hierarchy ensures first-time visitors easily grasp your offerings, while returning customers enjoy quick access to what they need.</p>
                 </div>
 
                 <div class="content-card">
                     <div class="card-icon">📱</div>
-                    <h3 class="card-title">Universal Design</h3>
-                    <p class="card-description">Designed to work perfectly on every device. Touch-friendly interface elements, readable text sizes, and intuitive navigation that feels natural whether you're using a phone, tablet, or computer.</p>
+                    <h3 class="card-title">Seamless Universal Design</h3>
+                    <p class="card-description">Your website will be meticulously designed to perform flawlessly on every device. With touch-friendly interface elements, perfectly readable text sizes, and intuitive navigation, the experience feels natural whether on a phone, tablet, or desktop computer.</p>
                 </div>
             </div>
         </div>
 
         <!-- Interactive Features Tab -->
         <div class="tab-content" id="features">
-            <h2 class="section-title">Interactive Features</h2>
-            <p class="section-subtitle">Engaging elements that make the website memorable and functional</p>
+            <h2 class="section-title">Interactive Features: Engaging & Functional</h2>
+            <p class="section-subtitle">Dynamic elements that make your website memorable, highly functional, and a joy to explore.</p>
 
             <div class="feature-showcase">
-                <h3 style="color: var(--primary-teal); margin-bottom: 20px;">Hero Section Experience</h3>
+                <h3 style="color: var(--primary-teal); margin-bottom: 20px;">Captivating Hero Section Experience</h3>
                 <div class="hero-demo">
                     <div class="hero-banh-mi">🥖</div>
                     <h2 style="color: var(--primary-teal); font-size: 32px; margin-bottom: 10px;">HEALTHY BITES OF FRESHNESS</h2>
-                    <p style="color: var(--primary-orange); font-size: 18px; margin-bottom: 20px;">Authentic Vietnamese Bánh Mì</p>
-                    <p style="color: var(--medium-gray); margin-bottom: 30px;">Animated background patterns and bouncing icon create immediate visual interest</p>
-                    <button class="demo-button">Order Your Perfect Bánh Mì</button>
-                    <button class="demo-button" style="background: transparent; color: var(--primary-teal); border: 2px solid var(--primary-teal);">Explore Our Menu</button>
+                    <p style="color: var(--primary-orange); font-size: 18px; margin-bottom: 20px;">Authentic Vietnamese Banh Mi, Reimagined</p>
+                    <p style="color: var(--medium-gray); margin-bottom: 30px;">Animated background patterns and a playful bouncing icon create immediate visual interest, drawing users deeper into your brand story.</p>
+                    <button class="demo-button">Order Your Perfect Banh Mi Now!</button>
+                    <button class="demo-button" style="background: transparent; color: var(--primary-teal); border: 2px solid var(--primary-teal);">Explore Our Full Menu</button>
                 </div>
             </div>
 
             <div class="feature-showcase">
-                <h3 style="color: var(--primary-teal); margin-bottom: 20px;">Interactive Menu Cards</h3>
+                <h3 style="color: var(--primary-teal); margin-bottom: 20px;">Dynamic & Interactive Menu Cards</h3>
                 <div class="menu-card-demo">
                     <div class="menu-item-demo">
                         <div class="menu-image-demo">🥪</div>
                         <div class="menu-content-demo">
-                            <div class="menu-name-demo">Traditional Bánh Mì</div>
-                            <p style="font-size: 14px; color: var(--medium-gray); margin-bottom: 10px;">Classic Vietnamese sandwich</p>
+                            <div class="menu-name-demo">Traditional Banh Mi Classic</div>
+                            <p style="font-size: 14px; color: var(--medium-gray); margin-bottom: 10px;">The timeless Vietnamese sandwich, perfected.</p>
                             <div class="menu-price-demo">$7.50</div>
                         </div>
                     </div>
                     <div class="menu-item-demo">
                         <div class="menu-image-demo">🍖</div>
                         <div class="menu-content-demo">
-                            <div class="menu-name-demo">Roasted Pork Belly</div>
-                            <p style="font-size: 14px; color: var(--medium-gray); margin-bottom: 10px;">Succulent roasted pork</p>
+                            <div class="menu-name-demo">Succulent Roasted Pork Belly</div>
+                            <p style="font-size: 14px; color: var(--medium-gray); margin-bottom: 10px;">Tender, flavorful roasted pork belly in every bite.</p>
                             <div class="menu-price-demo">$8.50</div>
                         </div>
                     </div>
                     <div class="menu-item-demo">
                         <div class="menu-image-demo">🐔</div>
                         <div class="menu-content-demo">
-                            <div class="menu-name-demo">Grilled Chicken</div>
-                            <p style="font-size: 14px; color: var(--medium-gray); margin-bottom: 10px;">Tender grilled chicken breast</p>
+                            <div class="menu-name-demo">Zesty Grilled Chicken</div>
+                            <p style="font-size: 14px; color: var(--medium-gray); margin-bottom: 10px;">Perfectly grilled chicken breast with a hint of zest.</p>
                             <div class="menu-price-demo">$8.00</div>
                         </div>
                     </div>
                 </div>
-                <p style="color: var(--medium-gray); font-style: italic;">Hover effects and smooth animations enhance user engagement</p>
+                <p style="color: var(--medium-gray); font-style: italic;">Engaging hover effects and smooth animations elevate the user experience, making menu exploration a delight.</p>
             </div>
 
             <div class="feature-showcase">
-                <h3 style="color: var(--primary-teal); margin-bottom: 20px;">Founder Spotlight</h3>
+                <h3 style="color: var(--primary-teal); margin-bottom: 20px;">Founder Spotlight: Building Trust Through Story</h3>
                 <div class="content-grid">
                     <div class="content-card">
                         <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-teal), var(--primary-orange)); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 12px;">CHEF<br>PHOTO</div>
-                        <h4 style="color: var(--primary-teal); text-align: center; margin-bottom: 10px;">VÕ QUỐC</h4>
-                        <p style="color: var(--primary-orange); text-align: center; font-weight: 600; margin-bottom: 15px;">Culinary Director</p>
-                        <p style="color: var(--medium-gray); text-align: center; font-size: 14px;">Personal stories create emotional connections with customers, building trust and brand loyalty through authentic founder narratives.</p>
+                        <h4 style="color: var(--primary-teal); text-align: center; margin-bottom: 10px;">VO QUOC</h4>
+                        <p style="color: var(--primary-orange); text-align: center; font-weight: 600; margin-bottom: 15px;">Culinary Director & Visionary</p>
+                        <p style="color: var(--medium-gray); text-align: center; font-size: 14px;">Authentic personal stories create deep emotional connections with your customers, fostering trust and unwavering brand loyalty through genuine founder narratives.</p>
                     </div>
                     <div class="content-card">
                         <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-teal), var(--primary-orange)); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 12px;">QUYNH<br>PHOTO</div>
                         <h4 style="color: var(--primary-teal); text-align: center; margin-bottom: 10px;">QUYNH HA</h4>
-                        <p style="color: var(--primary-orange); text-align: center; font-weight: 600; margin-bottom: 15px;">Brand Strategy</p>
-                        <p style="color: var(--medium-gray); text-align: center; font-size: 14px;">Professional headshots and credentials establish authority while personal quotes make the brand more relatable and trustworthy.</p>
+                        <p style="color: var(--primary-orange); text-align: center; font-weight: 600; margin-bottom: 15px;">Brand Strategist & Innovator</p>
+                        <p style="color: var(--medium-gray); text-align: center; font-size: 14px;">Professional insights and credentials establish authority, while personal quotes make your brand more relatable, trustworthy, and human.</p>
                     </div>
                 </div>
             </div>
 
             <div class="feature-showcase">
-                <h3 style="color: var(--primary-teal); margin-bottom: 20px;">Social Proof Integration</h3>
+                <h3 style="color: var(--primary-teal); margin-bottom: 20px;">Powerful Social Proof Integration</h3>
                 <div class="content-grid">
                     <div class="content-card">
                         <div style="text-align: center; font-size: 24px; color: var(--accent-yellow); margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
-                        <p style="font-style: italic; color: var(--dark-gray); margin-bottom: 15px; text-align: center;">"The most authentic bánh mì I've had outside of Vietnam. The flavors are incredible!"</p>
-                        <div style="color: var(--primary-teal); font-weight: 600; text-align: center;">- Sarah L.</div>
+                        <p style="font-style: italic; color: var(--dark-gray); margin-bottom: 15px; text-align: center;">"The most authentic Banh Mi I've had outside of Vietnam. The flavors are absolutely incredible and truly transport you!"</p>
+                        <div style="color: var(--primary-teal); font-weight: 600; text-align: center;">- Sarah L., Food Critic</div>
                     </div>
                     <div class="content-card">
                         <div style="text-align: center; font-size: 24px; color: var(--accent-yellow); margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
-                        <p style="font-style: italic; color: var(--dark-gray); margin-bottom: 15px; text-align: center;">"Best bánh mì in the city! Can't wait to come back for more."</p>
-                        <div style="color: var(--primary-teal); font-weight: 600; text-align: center;">- Michael T.</div>
+                        <p style="font-style: italic; color: var(--dark-gray); margin-bottom: 15px; text-align: center;">"Hands down the best Banh Mi in the city! I'm already planning my next visit and can't recommend it enough."</p>
+                        <div style="color: var(--primary-teal); font-weight: 600; text-align: center;">- Michael T., Local Enthusiast</div>
                     </div>
                 </div>
-                <p style="color: var(--medium-gray); font-style: italic; text-align: center; margin-top: 20px;">Customer testimonials build trust and encourage new visitors to make their first order</p>
+                <p style="color: var(--medium-gray); font-style: italic; text-align: center; margin-top: 20px;">Authentic customer testimonials build immediate trust and powerfully encourage new visitors to make their first order, converting browsers into loyal patrons.</p>
             </div>
 
             <div class="feature-showcase">
-                <h3 style="color: var(--primary-teal); margin-bottom: 20px;">Story Timeline</h3>
+                <h3 style="color: var(--primary-teal); margin-bottom: 20px;">Engaging Story Timeline</h3>
                 <div class="feature-demo">
-                    <p><strong>Interactive Heritage Journey:</strong></p>
-                    <p>✓ Click-able timeline points reveal detailed stories</p>
-                    <p>✓ Smooth scroll animations bring content to life</p>
-                    <p>✓ Mobile-optimized vertical layout adapts perfectly</p>
-                    <p>✓ Connected visual elements show progression through time</p>
+                    <p><strong>Interactive Heritage Journey: Discover Your Brand's Evolution</strong></p>
+                    <p>✓ Clickable timeline points reveal rich, detailed stories behind your brand's milestones.</p>
+                    <p>✓ Smooth scroll animations bring your narrative to life, creating an immersive storytelling experience.</p>
+                    <p>✓ Mobile-optimized vertical layout ensures perfect adaptability and readability on any device.</p>
+                    <p>✓ Connected visual elements elegantly illustrate your progression through time, showcasing your journey.</p>
                 </div>
             </div>
         </div>
 
         <!-- Real-World Benefits Tab -->
         <div class="tab-content" id="benefits">
-            <h2 class="section-title">Real-World Benefits</h2>
-            <p class="section-subtitle">What this modern design will actually deliver for your business</p>
+            <h2 class="section-title">Tangible Benefits: Driving Your Business Forward</h2>
+            <p class="section-subtitle">Discover the measurable advantages and real-world impact this modern, client-focused design will deliver for your business.</p>
 
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-icon">📈</div>
-                    <h3 class="benefit-title">Increased Customer Engagement</h3>
-                    <p class="benefit-description">Interactive features and smooth animations keep visitors exploring longer. Custom builder tool creates personal investment in the ordering process.</p>
+                    <h3 class="benefit-title">Maximized Customer Engagement</h3>
+                    <p class="benefit-description">Our interactive features and fluid animations keep visitors captivated and exploring longer. A custom builder tool fosters personal investment, significantly boosting order conversion rates.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">📱</div>
-                    <h3 class="benefit-title">Mobile-First Experience</h3>
-                    <p class="benefit-description">Perfect functionality on smartphones where most customers browse. Fast loading, easy navigation, and touch-optimized interfaces increase mobile conversions.</p>
+                    <h3 class="benefit-title">Flawless Mobile-First Experience</h3>
+                    <p class="benefit-description">Ensure perfect functionality on smartphones, where the majority of your customers browse. Fast loading times, intuitive navigation, and touch-optimized interfaces dramatically increase mobile conversions and user satisfaction.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">🎯</div>
-                    <h3 class="benefit-title">Brand Differentiation</h3>
-                    <p class="benefit-description">Stand out from competitors with premium design that reflects quality. Professional appearance builds trust and justifies premium pricing.</p>
+                    <h3 class="benefit-title">Unrivaled Brand Differentiation</h3>
+                    <p class="benefit-description">Distinguish yourself from competitors with a premium design that inherently communicates quality and sophistication. A professional appearance builds immediate trust and justifies premium pricing for your offerings.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">⚡</div>
-                    <h3 class="benefit-title">Fast Performance</h3>
-                    <p class="benefit-description">Quick loading times reduce bounce rates and improve search rankings. Optimized code and images ensure smooth experience even on slower connections.</p>
+                    <h3 class="benefit-title">Blazing-Fast Performance</h3>
+                    <p class="benefit-description">Achieve lightning-quick loading times, drastically reducing bounce rates and significantly improving search engine rankings. Our optimized code and imagery guarantee a smooth, responsive experience, even on slower connections.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">🔍</div>
-                    <h3 class="benefit-title">Search Engine Visibility</h3>
-                    <p class="benefit-description">Proper structure and optimization help customers find you online. Better rankings mean more organic traffic and reduced marketing costs.</p>
+                    <h3 class="benefit-title">Enhanced Search Engine Visibility</h3>
+                    <p class="benefit-description">Benefit from proper website structure and meticulous SEO optimization that helps customers effortlessly find you online. Higher rankings translate directly into more organic traffic and substantial reductions in marketing costs.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">💡</div>
-                    <h3 class="benefit-title">Easy Updates</h3>
-                    <p class="benefit-description">Clean code structure makes future changes simple and cost-effective. Add new menu items, update prices, or modify content without developer dependency.</p>
+                    <h3 class="benefit-title">Effortless Future Updates</h3>
+                    <p class="benefit-description">Our clean, modular code structure makes future changes simple, rapid, and highly cost-effective. Easily add new menu items, update prices, or modify content without constant developer dependency.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">🌐</div>
-                    <h3 class="benefit-title">Universal Accessibility</h3>
-                    <p class="benefit-description">Works perfectly for all users regardless of age, device, or technical skill level. Inclusive design expands your potential customer base.</p>
+                    <h3 class="benefit-title">Universal Accessibility & Reach</h3>
+                    <p class="benefit-description">Your website will function perfectly for all users, regardless of age, device, or technical skill level. Our inclusive design principles expand your potential customer base, reaching a wider audience.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">💰</div>
-                    <h3 class="benefit-title">Cost-Effective Solution</h3>
-                    <p class="benefit-description">Modern web technologies provide app-like experiences without app development costs. One solution works across all devices and platforms.</p>
+                    <h3 class="benefit-title">Cost-Effective & High-Value Solution</h3>
+                    <p class="benefit-description">Leverage modern web technologies to deliver app-like experiences without the prohibitive costs of app development. One robust solution seamlessly works across all devices and platforms, maximizing your ROI.</p>
                 </div>
             </div>
-
-
         </div>
+
+        <!-- Deliverables Tab -->
+        <div class="tab-content" id="deliverables">
+            <h2 class="section-title">Project Deliverables: What You Will Receive</h2>
+            <p class="section-subtitle">A comprehensive overview of the key assets and results you'll gain upon project completion, ensuring a professional and successful launch.</p>
+
+            <ul class="deliverables-list">
+                <li>
+                    <strong>Fully Developed & Functional Website:</strong> A complete, robust website operating stably across all devices (desktop, tablet, mobile), ensuring a seamless user experience.
+                </li>
+                <li>
+                    <strong>Responsive Design Implementation:</strong> The interface will automatically adapt and display optimally on all screen sizes, guaranteeing accessibility and visual appeal.
+                </li>
+                <li>
+                    <strong>Optimized Performance:</strong> Experience lightning-fast page load times, smooth user interactions, and high performance scores on leading testing tools for superior user retention.
+                </li>
+                <li>
+                    <strong>Basic SEO Optimization:</strong> A search engine-friendly website structure, optimized meta tags, and titles to ensure your business is easily discoverable online, driving organic traffic.
+                </li>
+                <li>
+                    <strong>Clean & Structured Source Code:</strong> Well-documented HTML, CSS, and JavaScript code, designed for easy maintenance, future scalability, and effortless updates.
+                </li>
+                <li>
+                    <strong>Comprehensive User Guide:</strong> Detailed instructions on how to manage content, update information, and utilize your website's features independently.
+                </li>
+                <li>
+                    <strong>Thorough Testing Report:</strong> A summary of functional, performance, and browser compatibility test results, ensuring reliability and a bug-free experience.
+                </li>
+                <li>
+                    <strong>Fundamental Security Measures:</strong> Standard security protocols implemented to protect your website against common vulnerabilities, safeguarding your data and user trust.
+                </li>
+            </ul>
+
+            <h3 style="text-align: center; color: var(--primary-teal); font-size: 28px; margin-bottom: 30px;">Explore Our Sample Prototype Website</h3>
+            <p style="text-align: center; color: var(--medium-gray); margin-bottom: 20px;">
+                Click the button below to experience a live example of a prototype website, offering you a tangible preview of the user interface and overall user experience we deliver.
+            </p>
+            <div style="text-align: center;">
+                <a href="https://www.figma.com/proto/YOUR_FIGMA_PROTOTYPE_LINK_HERE" target="_blank" class="sample-website-button">
+                    View Sample Prototype
+                </a>
+            </div>
+            <p style="text-align: center; font-size: 12px; color: var(--medium-gray); margin-top: 10px;">
+                <em>(Note: The link above is a placeholder. Please replace it with your actual Figma or prototype link.)</em>
+            </p>
+        </div>
+
     </div>
 
     <script>
@@ -773,6 +886,14 @@
                 tabs[newIndex].click();
             }
         });
+
+        // The updatePrice() function was called in the original code but not defined.
+        // Adding a placeholder function to prevent errors.
+        // If there's specific pricing functionality, you can add it here.
+        function updatePrice() {
+            // console.log("updatePrice() function called.");
+            // Add pricing update logic if applicable
+        }
 
         // Initialize
         updatePrice();
